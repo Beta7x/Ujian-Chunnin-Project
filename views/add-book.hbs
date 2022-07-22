@@ -1,0 +1,74 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/" method="GET">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Add Book</li>
+  </ol>
+</nav>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-9">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/add" method="POST" enctype="multipart/form-data">
+                        
+                        <div class="row">
+                            <div class="col-lg">
+                                <label for="brand" class="mb-1">Title</label>
+                                <input type="text" name="title" class="form-control" placeholder="Book title" required>
+                            </div>
+                            <div class="col-lg-3">
+                                <label for="series" class="mb-1">Pages</label>
+                                <input type="number" name="pages" class="form-control" placeholder="Number of pages" required>
+                            </div>
+                            <div class="col-lg-3">
+                                <label for="series" class="mb-1">Price</label>
+                                <input type="number" name="price" class="form-control" placeholder="Book price" required>
+                            </div>
+                        </div>
+
+                        <div class="row mt-1">
+                            <div class="col-lg">
+                                <label for="brand" class="mb-1">Author</label>
+                                <input type="text" name="author" class="form-control" placeholder="Author" required>
+                            </div>
+                            <div class="col-lg-3">
+                                <label for="series" class="mb-1">Publisher</label>
+                                <input type="text" name="publisher" class="form-control" placeholder="Publisher" required>
+                            </div>
+                            <div class="col-lg-3">
+                                <label for="series" class="mb-1">Year</label>    
+                                <select class="form-select" name="year" aria-label="Default select example">
+                                <option disabled selected>Publication year</option>
+                                {{#each year}}
+                                <option value="{{this}}">{{this}}</option>
+                                {{/each}}
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="row mt-1 mb-4">
+                            <div class="col-lg">
+                                <label for="brand" class="mb-1">Language</label>
+                                <input type="text" name="language" class="form-control" placeholder="Language" required>
+                            </div>
+                            <div class="col-lg">
+                                <label for="series" class="mb-1">Category</label>    
+                                <select class="form-select" name="category.id" aria-label="Default select example">
+                                <option disabled selected>Books category</option>
+                                {{#each rows}}
+                                <option value="{{this.id}}">{{this.category_name}}</option>
+                                {{/each}}
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 d-grid mb-2">
+                            <button type="submit" class="btn btn-primary"><b>Submit</b></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

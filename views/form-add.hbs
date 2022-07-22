@@ -1,0 +1,31 @@
+    <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Title</label>
+                            <input type="text" name="brand" class="form-control" id="inputName"
+                                    aria-describedby="emailHelp" placeholder="Book title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Seri</label>
+                            <input type="text" name="seri" class="form-control" id="inputNoTelepon"
+                                    aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Category</label>
+                            <select class="form-select" name="tahun_produksi" aria-label="Default select example">
+                                <option selected>Book category</option>
+                                {{#each rows}}
+                                <option value="{{this.id}}">{{this.category_name}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Year</label>
+                            <select class="form-select" name="tahun_produksi" aria-label="Default select example">
+                                <option selected>Publication year</option>
+                                {{#each year}}
+                                <option value="{{this}}">{{this}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>

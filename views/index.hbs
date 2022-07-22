@@ -1,0 +1,126 @@
+{{!-- Bootstrap Modal Add Book--}}
+<div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  data-bs-backdrop="static" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add New Book</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="#" method="POST" id="add_product_form" enctype="multipart/form-data">
+        <div class="modal-body p-4 bg-light">
+          
+          <div class="row">
+            <div class="col-lg">
+              <label for="brand">Title</label>
+              <input type="text" name="title" class="form-control" placeholder="Book title" required>
+            </div>
+            <div class="col-lg-6">
+              <label for="brand">Pages</label>
+              <input type="number" name="pages" class="form-control" placeholder="Number of pages" required>
+            </div>
+          </div>
+          
+          <div class="row mt-2">
+            <div class="col-lg">
+              <label for="brand">Publisher</label>
+              <input type="text" name="publisher" class="form-control" placeholder="publisher" required>
+            </div>
+            <div class="col-lg-6">
+              <label for="brand">Year</label>
+              <select class="form-select" name="year" aria-label="Default select example">
+                <option selected>Publication year</option>
+                {{#each rows}}
+                <option value="{{this.year}}">{{this.year}}</option>
+                {{/each}}
+              </select>
+            </div>
+          </div>
+
+          <div class="row mt-2">
+            <div class="col-lg">
+              <label for="brand">Author</label>
+              <input type="text" name="author" class="form-control" placeholder="Author" required>
+            </div>
+            <div class="col-lg-6">
+              <label for="brand">Price</label>
+              <input type="number" name="price" class="form-control" placeholder="Book price" required>
+            </div>
+          </div>
+
+          <div class="row mt-2">
+            <div class="col-lg">
+              <label for="brand">Language</label>
+              <input type="text" name="language" class="form-control" placeholder="Language" required>
+            </div>
+            <div class="col-lg-6">
+              <label for="brand">Category</label>
+              <select class="form-select" name="category_name" aria-label="Default select example">
+                <option selected>Book Category</option>
+                {{#each rows}}
+                <option value="{{this.category_name}}">{{this.category_name}}</option>
+                {{/each}}
+                {{!-- <option value="programming">Programming</option>
+                <option value="komik">Komik</option>
+                <option value="novel">Novel</option> --}}
+              </select>
+            </div>
+          </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" id="add_product_btn" class="btn btn-success">Add Book</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+{{!-- End of Bootstrap Modal Add Book --}}
+
+<div class="row mb-3">
+  <div class="col-6"><h2>Book</h2></div>
+  <div class="col-6 d-flex justify-content-end">
+    {{!-- <button action="/add" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addProductModal"><i class="bi-plus-circle me-2"></i>Add New Book</button>     --}}
+    <a href="/add" type="button" class="btn btn-success align-self-center"> + Add New Book </a>
+  </div>
+</div>
+
+<table class="table table-hover ">
+  <thead class="thead thead-light">
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Publisher</th>
+      <th scope="col">Year</th>
+      <th scope="col">Pages</th>
+      <th scope="col">Price</th>
+      <th scope="col">Language</th>
+      <th scope="col">Category</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each rows}}
+    <tr>
+      <th scope="row">{{this.id}}</th>
+      <td>{{this.title}}</td>
+      <td>{{this.author}}</td>
+      <td>{{this.publisher}}</td>
+      <td>{{this.year}}</td>
+      <td>{{this.pages}}</td>
+      <td>{{this.price}}</td>
+      <td>{{this.language}}</td>
+      <td>{{this.category_name}}</td>
+      <td>
+          <a href="#" type="button" class="btn btn-light btn-small"><i class="bi bi-eye"></i></a>
+          <a href="#" type="button" class="btn btn-primary btn-small"><i class="bi bi-pen"></i></a>
+          <a href="#" type="button" class="btn btn-danger btn-small"><i class="bi bi-trash"></i></a>
+      </td>
+    </tr>
+    {{/each}}
+
+  </tbody>
+</table>
