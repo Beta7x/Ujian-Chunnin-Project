@@ -44,5 +44,5 @@ pool.getConnection((err, connection) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server running and listening on http://local~host:${PORT}`);
+    console.log(`Server running and listening on http://localhost:${PORT}`);
 });

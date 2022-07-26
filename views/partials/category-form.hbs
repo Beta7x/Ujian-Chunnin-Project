@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-lg">
+    <label for="brand" class="mb-1">Category</label>
+    {{#if rows}}
+    {{#each rows}}
+    <input
+    value="{{this.category_name}}"
+      type="text"
+      name="category_name"
+      class="form-control"
+      placeholder="Category name"
+      required
+    />
+    {{/each}}
+    {{else}}
+    <input
+      type="text"
+      name="category_name"
+      class="form-control"
+      placeholder="Category name"
+      required
+    />
+    {{/if}}
+  </div>
+</div>
+
+<div class="row mt-1 mb-4">
+  <div class="col-lg">
+    <label for="brand" class="mb-1">Description</label>
+    {{#if rows}}
+    {{#each rows}}
+    <textarea
+      type="text"
+      name="description"
+      class="form-control"
+      rows="8"
+      placeholder="Category description"
+      required
+    >{{this.description}}</textarea>
+    {{/each}}
+    {{else}}
+    <textarea
+      type="text"
+      name="description"
+      class="form-control"
+      rows="8"
+      placeholder="Category description"
+      required
+    ></textarea>
+    {{/if}}
+  </div>
+</div>
+
+<div class="col-lg-12 d-grid mb-2">
+  <button type="submit" class="btn btn-primary"><b>Submit</b></button>
+</div>

@@ -1,7 +1,7 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/" method="GET">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Add Book</li>
+    <li class="breadcrumb-item"><a href="/category" method="GET">Category</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Add Category</li>
   </ol>
 </nav>
 
@@ -10,8 +10,8 @@
         <div class="col-9">
             <div class="card">
                 <div class="card-body">
-                    <form action="/addbook" method="POST">
-                        {{> book-form}}
+                    <form action="/category/add" method="POST">
+                        {{> category-form}}
                     </form>
                 </div>
             </div>

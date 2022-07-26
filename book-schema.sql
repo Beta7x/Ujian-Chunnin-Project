@@ -1,6 +1,7 @@
 CREATE TABLE category (
     id INT NOT NULL AUTO_INCREMENT,
     category_name VARCHAR(50) NOT NULL,
+    description TEXT,
     PRIMARY KEY(id)
 );
 
@@ -18,6 +19,8 @@ CREATE TABLE books (
     FOREIGN KEY (category_id)
     REFERENCES books(id)
 );
+
+
 
 
 -- Inner Join

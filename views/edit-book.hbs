@@ -1,7 +1,7 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="/" method="GET">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Add Book</li>
+    <li class="breadcrumb-item active" aria-current="page">Edit Book</li>
   </ol>
 </nav>
 
@@ -10,7 +10,9 @@
         <div class="col-9">
             <div class="card">
                 <div class="card-body">
-                    <form action="/addbook" method="POST">
+                    {{#each rows}}
+                    <form action="/updatebook/{{this.id}}" method="POST">
+                    {{/each}}
                         {{> book-form}}
                     </form>
                 </div>

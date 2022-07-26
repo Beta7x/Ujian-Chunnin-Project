@@ -1,0 +1,22 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/category" method="GET">Category</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Edit Category</li>
+  </ol>
+</nav>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-9">
+            <div class="card">
+                <div class="card-body">
+                    {{#each rows}}
+                    <form action="/category/update/{{this.id}}" method="POST">
+                    {{/each}}
+                        {{> category-form}}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

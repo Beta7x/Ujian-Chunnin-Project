@@ -1,0 +1,32 @@
+<div class="row mb-3">
+  <div class="col-6"><h2>Books Categories</h2></div>
+  <div class="col-6 d-flex justify-content-end">
+    <a href="/category/add" type="button" class="btn btn-success align-self-center"> + Add New Category </a>
+  </div>
+</div>
+
+<table class="table table-hover ">
+  <thead class="thead thead-light">
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Category Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each rows}}
+    <tr>
+      <th scope="row">{{@index}}</th>
+      <td>{{this.category_name}}</td>
+      <td class="col-lg-7">{{this.description}}</td>
+      <td class="col-sm-">
+          <a href="/category/edit/{{this.id}}" type="button" class="btn btn-primary btn-small"><i class="bi bi-pen"></i></a>
+          <a href="/category/delete/{{this.id}}" type="button" class="btn btn-danger btn-small"><i class="bi bi-trash"></i></a>
+      </td>
+    </tr>
+    {{/each}}
+
+  </tbody>
+</table>

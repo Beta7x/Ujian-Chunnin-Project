@@ -82,7 +82,7 @@
   <div class="col-6"><h2>Book</h2></div>
   <div class="col-6 d-flex justify-content-end">
     {{!-- <button action="/add" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addProductModal"><i class="bi-plus-circle me-2"></i>Add New Book</button>     --}}
-    <a href="/add" type="button" class="btn btn-success align-self-center"> + Add New Book </a>
+    <a href="/addbook" type="button" class="btn btn-success align-self-center"> + Add New Book </a>
   </div>
 </div>
 
@@ -105,7 +105,7 @@
 
     {{#each rows}}
     <tr>
-      <th scope="row">{{this.id}}</th>
+      <th scope="row">{{@index}}</th>
       <td>{{this.title}}</td>
       <td>{{this.author}}</td>
       <td>{{this.publisher}}</td>
@@ -115,9 +115,9 @@
       <td>{{this.language}}</td>
       <td>{{this.category_name}}</td>
       <td>
-          <a href="#" type="button" class="btn btn-light btn-small"><i class="bi bi-eye"></i></a>
-          <a href="#" type="button" class="btn btn-primary btn-small"><i class="bi bi-pen"></i></a>
-          <a href="#" type="button" class="btn btn-danger btn-small"><i class="bi bi-trash"></i></a>
+          {{!-- <a href="#" type="button" class="btn btn-light btn-small"><i class="bi bi-eye"></i></a> --}}
+          <a href="/editbook/{{this.id}}" type="button" class="btn btn-primary btn-small"><i class="bi bi-pen"></i></a>
+          <a href="/delete/{{this.id}}" type="button" class="btn btn-danger btn-small"><i class="bi bi-trash"></i></a>
       </td>
     </tr>
     {{/each}}
